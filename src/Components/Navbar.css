@@ -1,0 +1,37 @@
+.header{
+    position: sticky;
+    top: 0;
+    background-color: #f9f4f0d4;
+    opacity: 1;
+    padding: 10px 0px;
+}
+.nav-link {
+    font-size: small;
+    font-weight: bold;
+}
+.nav-item img {
+    margin-right: 30px;
+    height: 20px;
+    position: relative;
+}
+.badge-container {
+    position: absolute;
+    top: -10px;
+    right: 0;
+}
+.badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 8px;
+    font-size: 10px;
+}
+.navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    justify-content: space-between;
+}
+.mx-auto {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}

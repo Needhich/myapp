@@ -1,0 +1,118 @@
+body{
+    background-color: #F5F3F3;
+}
+.underline-text {
+    border-bottom: 2px solid #F47C2A;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.menusection{
+    padding: 70px 0px;
+}
+.menuheading{
+    font-size: 24px;
+    font-weight: 500;
+}
+.menutabs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menutabcard{
+    background-color: #ffffff;
+    padding: 20px 10px;
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    max-width: 100px;
+    margin: auto 10px;
+    cursor: pointer;
+}
+.menutabcard:hover{
+    background-color: #E80013;
+}
+.menutabimg{
+    border-radius: 32px;
+    padding: 10px;
+    background-color: #E80013;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    max-width: 40px;
+    min-width: 40px;
+    max-height: 40px;
+    min-height: 40px;
+}
+.menutabcard:hover .menutabimg{
+    background-color: #FACCD0;
+}
+.menutabcard:hover img{
+    filter: invert(0);
+}
+.menutabcard img{
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+.menutabcard p{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-weight: 500;
+    color: black;
+}
+.menutabcard:hover p{
+    color: #ffffff;
+}
+.foodimg > img{
+    width: 110px;
+    transition: transform .2s;
+}
+.foodimg img:hover{
+    transform: scale(1.1);
+}
+.foodcardimg img{
+    width: 25px;
+    height: 25px;
+    filter: invert(1);
+}
+.foodcardimg{
+    background-color: #E80013;
+    padding: 10px;
+    border-radius: 32px;
+transition: transform .2s;
+}
+.foodcardimg:hover{
+    transform: scale(1.1);
+}
+.menuoptions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    background-color: #F5EEE9;
+    flex-wrap: wrap;
+}
+.menuoptioncard{
+    padding: 10px;
+    width: 280px;
+    text-align: right;
+    background-color: #F9F5F2;
+    border-radius: 10px;
+    margin: 70px 10px;
+    cursor: pointer;
+}
+.foodimg{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 10px;
+    margin-top: -40px;
+}
+.menuoptioncard p{
+    margin: 0px;
+}
