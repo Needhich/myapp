@@ -1,0 +1,25 @@
+.contactusform{
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+input, textarea{
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #D1D5DB;
+}
+.offcanvas-body{
+    background-color: #F5F3F3;
+}
+.offcanvas-body img{
+    width: 100px;
+    margin-top: -10px;
+}
+.submitbtn{
+    background-color: #EA580C;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+}
