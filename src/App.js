@@ -6,7 +6,6 @@ import Home from './Pages/Home';
 import Menu from './Pages/Menu';
 import Footer from './Components/Footer';
 import Notfound from './Pages/Notfound';
-import Contactus from './Pages/Contactus';
 import Createpage from './Pages/Createpage';
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
      <Routes>
       <Route path='/' element= {<Home/>} />
       <Route path='/menu' element= {<Menu/>} />
-      <Route path='/contactus' element= {<Contactus/>} />
       <Route path='*'  element={<Notfound/>} />
       <Route path='/createpage'  element={<Createpage/>} />
      </Routes>

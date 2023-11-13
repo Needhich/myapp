@@ -3,7 +3,7 @@
     flex-direction: column;
     row-gap: 25px;
 }
-input, textarea{
+.contactusform input, textarea{
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #D1D5DB;

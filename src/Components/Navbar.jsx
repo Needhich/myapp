@@ -1,8 +1,10 @@
 import './Navbar.css';
+import '../Pages/Contactus.css';
 import cartimg from '../Assets/bag.png';
 import loginimg from '../Assets/login.png';
 import searchimg from '../Assets/search.png';
 import { Link } from 'react-router-dom';
+import cartman from '../Assets/cartman.png';
 
 function Navbar(){
 return(
@@ -23,7 +25,7 @@ return(
         <Link className="nav-link" to="/menu">Menu</Link>
         </li>
         <li className="nav-item">
-        <Link className="nav-link" to="/contactus">Contact Us</Link>
+        <a className="nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Contact Us</a>
         </li>
       </ul>
       <ul className="navbar-nav ms-auto "> 
@@ -44,7 +46,22 @@ return(
     </div>
   </div>
 </nav>
-
+<div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div className="offcanvas-header">
+    <h5 className="offcanvas-title" id="offcanvasExampleLabel">Contact Us</h5>
+    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div className="offcanvas-body">
+    <img src={cartman} alt='cartman' />
+    <form action="#" method="post" className="contactusform">
+        <input placeholder="Name" type="text" id="name" name="name" required />
+        <input placeholder="Email ID" type="email" id="email" name="email" required />
+        <input placeholder="Subject" type="text" id="subject" name="subject" required />
+        <textarea placeholder="Message" id="message" name="message" rows="4" required></textarea>
+        <button className='submitbtn' type="submit">Submit</button>
+    </form>
+  </div>
+</div>
 </div>
 )
 }
