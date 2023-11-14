@@ -7,117 +7,91 @@ import desserts from '../Assets/dessert.png';
 import icecream from '../Assets/icecream.png';
 import fish from '../Assets/fish.png';
 import rice from '../Assets/rice.png';
-import foodtest from '../Assets/foodtest.png';
 import cart from '../Assets/cart.png';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 function Menu (){
+    const [foods, setFoods]=useState([])
+    const fetchitems=()=>{
+        axios.get("https://backend-self-delta.vercel.app/api/food")
+        .then( res=>{
+            setFoods(res.data.data)
+        }
+        )
+    }
+    useEffect(()=>{
+        fetchitems()
+    },[])
+    const handlefood = (title)=>{
+        if (title === "Menu") {
+           fetchitems() 
+        }else{
+            axios.get(`https://backend-self-delta.vercel.app/api/all/${title}`)
+            .then( res=>{
+                setFoods(res.data.food)
+            }
+            )
+        }
+    }
+    console.log(foods)
+    const menubuttons=[
+        {id:1, title:"Menu", image:menu},
+        {id:2, title:"Chicken", image:chicken},
+        {id:3, title:"Fruit", image:fruit},
+        {id:4, title:"Soft Drink",image:softdrink},
+        {id:5, title:"Desserts", image:desserts},
+        {id:6, title:"Icecreams", image:icecream},
+        {id:7, title:"Fish", image:fish},
+        {id:8, title:"Rice", image:rice},
+        {id:9, title:"Curry", image:desserts}
+
+    ]
 return(
     <div>
         <div className="menusection">
             <p className="menuheading underline-text">Our Hot Dishes</p>
             <div className="menutabs">
-                <div className="menutabcard">
-                    <div className='menutabimg'>
-                    <img src={menu} alt='menu' />
-                    </div>
-                    <p>Menu</p>
-                </div>
-                <div className="menutabcard">
-                    <div className='menutabimg'>
-                    <img src={chicken} alt='chicken' />
-                    </div>
-                    <p>Chicken</p>
-                </div>
-                <div className="menutabcard">
-                    <div className='menutabimg'>
-                    <img src={fruit} alt='fruit' />
-                    </div>
-                    <p>Fruit</p>
-                </div>
-                <div className="menutabcard">
-                    <div className='menutabimg'>
-                    <img src={softdrink} alt='softdrink' />
-                    </div>
-                    <p>Soft Drink</p>
-                </div>
-                <div className="menutabcard">
-                    <div className='menutabimg'>
-                    <img src={desserts} alt='desserts' />
-                    </div>
-                    <p>Desserts</p>
-                </div>
-                <div className="menutabcard">
-                    <div className='menutabimg'>
-                    <img src={icecream} alt='icecream' />
-                    </div>
-                    <p>Icecreams</p>
-                </div>
-                <div className="menutabcard">
-                    <div className='menutabimg'>
-                    <img src={fish} alt='fish' />
-                    </div>
-                    <p>Fish</p>
-                </div>
-                <div className="menutabcard">
-                    <div className='menutabimg'>
-                    <img src={rice} alt='rice' />
-                    </div>
-                    <p>Rice</p>
-                </div>
-
-                <div className="menutabcard">
-                    <div className='menutabimg'>
-                    <img src={desserts} alt='desserts' />
-                    </div>
-                    <p>Curry</p>
-                </div>
-
+                {
+                    menubuttons.map((menu)=>{
+                        return(
+                            <>
+                             <div className="menutabcard" onClick={()=>{handlefood(menu.title)}}>
+                                <div className='menutabimg'>
+                                    <img src={menu.image} alt='menu' />
+                                </div>
+                                <p>{menu.title}</p>
+                             </div>
+                            </>
+                        )
+                    })
+                }
+               
             </div>
         </div>
         <div className="menuoptions">
-            <div className="menuoptioncard">
+           {
+            foods.map((food)=>{
+                return(
+                    <>
+                     <div className="menuoptioncard">
                 <div className="foodimg">
-                    <img src={foodtest} alt="foodtest" />
+                    <div className='foodimage'>
+                    <img src={food.url} alt="foodtest" />
+                    </div>
                     <div className='foodcardimg'>
                     <img src={cart} alt='cart' />
                     </div>
                 </div>
-                <p className="foodname">New Food Test</p>
-                <p className="fooddescription">Short Description</p>
-                <p className="foodprice"><span style={{color: '#F47C2A'}}>₵</span>45</p>
+                <p className="foodname"> {food.title} </p>
+                <p className="fooddescription">{food.description}</p>
+                <p className="foodprice"><span style={{color: '#F47C2A'}}>₵</span>{food.price}</p>
             </div>
-            <div className="menuoptioncard">
-                <div className="foodimg">
-                    <img src={foodtest} alt="foodtest" />
-                    <div className='foodcardimg'>
-                    <img src={cart} alt='cart' />
-                    </div>
-                </div>
-                <p className="foodname">New Food Test</p>
-                <p className="fooddescription">Short Description</p>
-                <p className="foodprice"><span style={{color: '#F47C2A'}}>₵</span>45</p>
-            </div>
-            <div className="menuoptioncard">
-                <div className="foodimg">
-                    <img src={foodtest} alt="foodtest" />
-                    <div className='foodcardimg'>
-                    <img src={cart} alt='cart' />
-                    </div>
-                </div>
-                <p className="foodname">New Food Test</p>
-                <p className="fooddescription">Short Description</p>
-                <p className="foodprice"><span style={{color: '#F47C2A'}}>₵</span>45</p>
-            </div>
-            <div className="menuoptioncard">
-                <div className="foodimg">
-                    <img src={foodtest} alt="foodtest" />
-                    <div className='foodcardimg'>
-                    <img src={cart} alt='cart' />
-                    </div>
-                </div>
-                <p className="foodname">New Food Test</p>
-                <p className="fooddescription">Short Description</p>
-                <p className="foodprice"><span style={{color: '#F47C2A'}}>₵</span>45</p>
-            </div>
+                    </>
+                )
+            })
+           }
+           
         </div>
 
     </div>

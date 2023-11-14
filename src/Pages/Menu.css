@@ -66,11 +66,23 @@ body{
 .menutabcard:hover p{
     color: #ffffff;
 }
-.foodimg > img{
+.foodimage{
     width: 110px;
-    transition: transform .2s;
+    max-width: 110px;
+    min-width: 110px;
+    min-height: 110px;
+    max-height: 110px;
+    height: 110px;
+    text-align: center;
 }
-.foodimg img:hover{
+.foodimage img{
+    transition: transform .2s;
+    width: 80%;
+    min-width: 80%;
+    max-width: 80%;
+    height: 90%;
+}
+.foodimage img:hover{
     transform: scale(1.1);
 }
 .foodcardimg img{

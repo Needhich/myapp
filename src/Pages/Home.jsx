@@ -4,7 +4,10 @@ import strawberry from '../Assets/strawberry.png';
 import Menu from './Menu';
 import foodtest from '../Assets/foodtest.png';
 import cart from '../Assets/cart.png';
+import { useEffect, useState } from 'react';
+
 function Home(){
+    
  return(
     <div>
         <div className='herosection'>
@@ -58,6 +61,8 @@ function Home(){
             </div>
            </div>
         </div>
+
+        {/* carousel section */}
         <div oncontextmenu='return false' className='snippet-body'>
         <section className="pt-5 pb-5">
     <div className="container">
@@ -83,7 +88,9 @@ function Home(){
                                 <div className="col-md-3 mb-3">
                                 <div className="menuoptioncard">
                 <div className="foodimg">
+                    <div className='foodimage'>
                     <img src={foodtest} alt="foodtest" />
+                    </div>
                     <div className='foodcardimg'>
                     <img src={cart} alt='cart' />
                     </div>
@@ -96,7 +103,9 @@ function Home(){
                                 <div className="col-md-3 mb-3">
                                 <div className="menuoptioncard">
                 <div className="foodimg">
+                    <div className='foodimage'>
                     <img src={foodtest} alt="foodtest" />
+                    </div>
                     <div className='foodcardimg'>
                     <img src={cart} alt='cart' />
                     </div>
@@ -109,7 +118,9 @@ function Home(){
                                 <div className="col-md-3 mb-3">
                                 <div className="menuoptioncard">
                 <div className="foodimg">
+                    <div className='foodimage'>
                     <img src={foodtest} alt="foodtest" />
+                    </div>
                     <div className='foodcardimg'>
                     <img src={cart} alt='cart' />
                     </div>
@@ -121,18 +132,19 @@ function Home(){
                                 </div>
                                 <div className="col-md-3 mb-3">
                                 <div className="menuoptioncard">
-                <div className="foodimg">
-                    <img src={foodtest} alt="foodtest" />
-                    <div className='foodcardimg'>
-                    <img src={cart} alt='cart' />
-                    </div>
-                </div>
-                <p className="foodname">New Food Test</p>
-                <p className="fooddescription">Short Description</p>
-                <p className="foodprice"><span style={{color: '#F47C2A'}}>₵</span>45</p>
-            </div>
+                                    <div className="foodimg">
+                                        <div className='foodimage'>
+                                            <img src={foodtest} alt="foodtest" />
+                                            </div>
+                                            <div className='foodcardimg'>
+                                                <img src={cart} alt='cart' />
+                                                </div>
+                                                </div>
+                                                <p className="foodname">New Food Test</p>
+                                                <p className="fooddescription">Short Description</p>
+                                                <p className="foodprice"><span style={{color: '#F47C2A'}}>₵</span>45</p>
+                                         </div>
                                 </div>
-
                             </div>
                         </div>
                         <div className="carousel-item">
@@ -141,7 +153,9 @@ function Home(){
                             <div className="col-md-3 mb-3">
                                 <div className="menuoptioncard">
                 <div className="foodimg">
+                    <div className='foodimage'>
                     <img src={foodtest} alt="foodtest" />
+                    </div>
                     <div className='foodcardimg'>
                     <img src={cart} alt='cart' />
                     </div>
@@ -154,7 +168,9 @@ function Home(){
                                 <div className="col-md-3 mb-3">
                                 <div className="menuoptioncard">
                 <div className="foodimg">
+                    <div className='foodimage'>
                     <img src={foodtest} alt="foodtest" />
+                    </div>
                     <div className='foodcardimg'>
                     <img src={cart} alt='cart' />
                     </div>
@@ -167,7 +183,9 @@ function Home(){
                                 <div className="col-md-3 mb-3">
                                 <div className="menuoptioncard">
                 <div className="foodimg">
+                    <div className='foodimage'>
                     <img src={foodtest} alt="foodtest" />
+                    </div>
                     <div className='foodcardimg'>
                     <img src={cart} alt='cart' />
                     </div>
@@ -179,18 +197,19 @@ function Home(){
                                 </div>
                                 <div className="col-md-3 mb-3">
                                 <div className="menuoptioncard">
-                <div className="foodimg">
-                    <img src={foodtest} alt="foodtest" />
-                    <div className='foodcardimg'>
-                    <img src={cart} alt='cart' />
-                    </div>
-                </div>
-                <p className="foodname">New Food Test</p>
-                <p className="fooddescription">Short Description</p>
-                <p className="foodprice"><span style={{color: '#F47C2A'}}>₵</span>45</p>
-            </div>
+                                    <div className="foodimg">
+                                        <div className='foodimage'>
+                                            <img src={foodtest} alt="foodtest" />
+                                            </div>
+                                            <div className='foodcardimg'>
+                                                <img src={cart} alt='cart' />
+                                                </div>
+                                                </div>
+                                                <p className="foodname">New Food Test</p>
+                                                <p className="fooddescription">Short Description</p>
+                                                <p className="foodprice"><span style={{color: '#F47C2A'}}>₵</span>45</p>
+                                         </div>
                                 </div>
-
                             </div>
                         </div>
                         <div className="carousel-item">
@@ -199,7 +218,9 @@ function Home(){
                             <div className="col-md-3 mb-3">
                                 <div className="menuoptioncard">
                 <div className="foodimg">
+                    <div className='foodimage'>
                     <img src={foodtest} alt="foodtest" />
+                    </div>
                     <div className='foodcardimg'>
                     <img src={cart} alt='cart' />
                     </div>
@@ -212,7 +233,9 @@ function Home(){
                                 <div className="col-md-3 mb-3">
                                 <div className="menuoptioncard">
                 <div className="foodimg">
+                    <div className='foodimage'>
                     <img src={foodtest} alt="foodtest" />
+                    </div>
                     <div className='foodcardimg'>
                     <img src={cart} alt='cart' />
                     </div>
@@ -225,7 +248,9 @@ function Home(){
                                 <div className="col-md-3 mb-3">
                                 <div className="menuoptioncard">
                 <div className="foodimg">
+                    <div className='foodimage'>
                     <img src={foodtest} alt="foodtest" />
+                    </div>
                     <div className='foodcardimg'>
                     <img src={cart} alt='cart' />
                     </div>
@@ -237,16 +262,18 @@ function Home(){
                                 </div>
                                 <div className="col-md-3 mb-3">
                                 <div className="menuoptioncard">
-                <div className="foodimg">
-                    <img src={foodtest} alt="foodtest" />
-                    <div className='foodcardimg'>
-                    <img src={cart} alt='cart' />
-                    </div>
-                </div>
-                <p className="foodname">New Food Test</p>
-                <p className="fooddescription">Short Description</p>
-                <p className="foodprice"><span style={{color: '#F47C2A'}}>₵</span>45</p>
-            </div>
+                                    <div className="foodimg">
+                                        <div className='foodimage'>
+                                            <img src={foodtest} alt="foodtest" />
+                                            </div>
+                                            <div className='foodcardimg'>
+                                                <img src={cart} alt='cart' />
+                                                </div>
+                                                </div>
+                                                <p className="foodname">New Food Test</p>
+                                                <p className="fooddescription">Short Description</p>
+                                                <p className="foodprice"><span style={{color: '#F47C2A'}}>₵</span>45</p>
+                                         </div>
                                 </div>
                             </div>
                         </div>
