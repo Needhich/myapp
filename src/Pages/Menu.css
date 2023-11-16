@@ -34,6 +34,15 @@ body{
 .menutabcard:hover{
     background-color: #E80013;
 }
+/* .active{
+    background-color: #E80013;
+
+}
+.active .menutabimg{
+    background-color: #FACCD0;
+
+} */
+
 .menutabimg{
     border-radius: 32px;
     padding: 10px;
