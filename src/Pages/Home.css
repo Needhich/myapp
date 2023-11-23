@@ -62,6 +62,9 @@
 .herocardimg{
     width: 150px;
     transition: transform .2s;
+    max-width: 120px;
+    height: 100px;
+    max-height: 100px;
 }
 .herocardimg:hover{
     transform: scale(1.1);
@@ -95,4 +98,10 @@
 }
 .price{
     font-weight: 700;
+}
+.herocardimg-outer{
+    width: 130px;
+    margin: auto;
+    max-width: 130px;
+    min-height: 100px;
 }

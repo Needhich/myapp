@@ -1,0 +1,25 @@
+.item-img img{
+    width: 400px;
+    border-radius: 32px;
+    margin: auto;
+}
+.design-for-detail{
+    background-color: beige;
+    border-radius: 10px;
+}
+.foodcartimg img{
+    width: 25px;
+    filter: invert(1);
+}
+.foodcartimg{
+    background-color: red;
+    padding: 10px;
+    border-radius: 32px;
+    width: fit-content;
+    margin: auto;
+    cursor: pointer;
+    transition: transform .2s;
+}
+.foodcartimg:hover{
+    transform: scale(1.1);
+}

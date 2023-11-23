@@ -10,13 +10,16 @@ import rice from '../Assets/rice.png';
 import cart from '../Assets/cart.png';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-function Menu (){
+
+function Menu (props){
     const [foods, setFoods]=useState([])
     const fetchitems=()=>{
         axios.get("https://backend-self-delta.vercel.app/api/food")
         .then( res=>{
             setFoods(res.data.data)
+            // foods.reverse()
         }
         )
     }
@@ -30,11 +33,11 @@ function Menu (){
             axios.get(`https://backend-self-delta.vercel.app/api/all/${title}`)
             .then( res=>{
                 setFoods(res.data.food)
+    
             }
             )
         }
     }
-    console.log(foods)
     const menubuttons=[
         {id:1, title:"Menu", image:menu},
         {id:2, title:"Chicken", image:chicken},
@@ -45,7 +48,6 @@ function Menu (){
         {id:7, title:"Fish", image:fish},
         {id:8, title:"Rice", image:rice},
         {id:9, title:"Curry", image:desserts}
-
     ]
 return(
     <div>
@@ -53,10 +55,10 @@ return(
             <p className="menuheading underline-text">Our Hot Dishes</p>
             <div className="menutabs">
                 {
-                    menubuttons.map((menu)=>{
+                    menubuttons.map((menu )=>{
                         return(
                             <>
-                             <div className="menutabcard" onClick={()=>{handlefood(menu.title)}}>
+                             <div className="menutabcard" key={menu.id} onClick={()=>{handlefood(menu.title)}}>
                                 <div className='menutabimg'>
                                     <img src={menu.image} alt='menu' />
                                 </div>
@@ -80,12 +82,18 @@ return(
                     <img src={food.url} alt="foodtest" />
                     </div>
                     <div className='foodcardimg'>
-                    <img src={cart} alt='cart' />
+                    <img src={cart} onClick={()=>{props.addtocart(food)}} alt='cart' />
                     </div>
                 </div>
+                <div className='fooddetail'>
+                    <Link to={`/fooddetails/${food._id}`} className='detail-link'>
+                <button className="btn btn-primary">Details</button></Link>
+                <div className="carddetail">
                 <p className="foodname"> {food.title} </p>
                 <p className="fooddescription">{food.description}</p>
-                <p className="foodprice"><span style={{color: '#F47C2A'}}>₵</span>{food.price}</p>
+                <p className="foodprice text-info">₵{food.price}</p>
+                </div>
+                </div>
             </div>
                     </>
                 )

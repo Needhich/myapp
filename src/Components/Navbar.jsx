@@ -6,7 +6,7 @@ import searchimg from '../Assets/search.png';
 import { Link } from 'react-router-dom';
 import cartman from '../Assets/cartman.png';
 
-function Navbar(){
+function Navbar(props){
 return(
 <div className='header'>
 
@@ -38,7 +38,7 @@ return(
                 <li className="nav-item position-relative mx-2">
                     <img className='topsocialicons' src={cartimg} alt="cart"/>
                     <div className="badge-container">
-                        <span className="badge">1</span>
+                        <span className="badge">{props.cart.length}</span>
                     </div>
                 </li>
             </ul>

@@ -5,9 +5,19 @@ import Menu from './Menu';
 import foodtest from '../Assets/foodtest.png';
 import cart from '../Assets/cart.png';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function Home(){
-    
+
+    const [items, setItems]=useState([])
+
+useEffect(()=>{
+    axios.get("https://backend-self-delta.vercel.app/api/food")
+        .then( res=>{
+            setItems(res.data.data)
+        }
+        )
+},[])
  return(
     <div>
         <div className='herosection'>
@@ -25,38 +35,24 @@ function Home(){
            </div>
            <div className='herosectionright'>
             <div className="herocardsection">
-                <div className="herocard">
+            {
+            items.slice(0,4).map((food)=>{
+                return(
+                    <>
+                     <div className="herocard" key={food.id}>
                     <div className="herocardinnersec">
-                    <img className='herocardimg' src={strawberry} alt="strawberry" />
-                    <p className="cardname">Strawberries</p>
-                    <p className="carddescription">Fresh Strawberries</p>
-                    <p className="price"> <span style={{color: '#EA580C'}} >₵</span>7.25</p>
+                        <div className="herocardimg-outer">
+                    <img className='herocardimg'  src={food.url} alt="strawberry" />
+                    </div>
+                    <p className="cardname">{food.title}</p>
+                    <p className="carddescription">{food.description}</p>
+                    <p className="price"> <span style={{color: '#EA580C'}} >₵</span>{food.price}</p>
                     </div>
                 </div>
-                <div className="herocard">
-                    <div className="herocardinnersec">
-                    <img className='herocardimg' src={strawberry} alt="strawberry" />
-                    <p className="cardname">Strawberries</p>
-                    <p className="carddescription">Fresh Strawberries</p>
-                    <p className="price"> <span style={{color: '#EA580C'}} >₵</span>7.25</p>
-                    </div>
-                </div>
-                <div className="herocard">
-                    <div className="herocardinnersec">
-                    <img className='herocardimg' src={strawberry} alt="strawberry" />
-                    <p className="cardname">Strawberries</p>
-                    <p className="carddescription">Fresh Strawberries</p>
-                    <p className="price"> <span style={{color: '#EA580C'}} >₵</span>7.25</p>
-                    </div>
-                </div>
-                <div className="herocard">
-                    <div className="herocardinnersec">
-                    <img className='herocardimg' src={strawberry} alt="strawberry" />
-                    <p className="cardname">Strawberries</p>
-                    <p className="carddescription">Fresh Strawberries</p>
-                    <p className="price"> <span style={{color: '#EA580C'}} >₵</span>7.25</p>
-                    </div>
-                </div>
+                    </>
+                )
+            })
+           }
                
             </div>
            </div>
