@@ -8,7 +8,8 @@ import icecream from '../Assets/icecream.png';
 import fish from '../Assets/fish.png';
 import rice from '../Assets/rice.png';
 import cart from '../Assets/cart.png';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -65,22 +66,24 @@ return(
                                 <p>{menu.title}</p>
                              </div>
                             </>
+
                         )
                     })
                 }
-               
+
             </div>
         </div>
         <div className="menuoptions">
-           {
-            foods.map((food)=>{
-                return(
-                    <>
-                     <div className="menuoptioncard">
+
+        
+            {
+                foods.map((food)=>{
+                    return(
+                        <>
+
+                          <div className="menuoptioncard">
                 <div className="foodimg">
-                    <div className='foodimage'>
                     <img src={food.url} alt="foodtest" />
-                    </div>
                     <div className='foodcardimg'>
                     <img src={cart} onClick={()=>{props.addtocart(food)}} alt='cart' />
                     </div>
@@ -95,10 +98,13 @@ return(
                 </div>
                 </div>
             </div>
-                    </>
-                )
-            })
-           }
+                        </>
+                    )
+                })
+            }
+          
+           
+            
            
         </div>
 

@@ -27,6 +27,7 @@ function Createpage() {
             if (res.status === 200) {
                 const newImage = res.data.secure_url;
                 setImage(newImage);
+                alert("image upload done")
             } else {
                 console.log(res.data.error);
             }
@@ -37,15 +38,6 @@ function Createpage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Values before submission:", {
-            title,
-            price,
-            discount,
-            description,
-            category,
-            image,
-            address,
-        });
         if (title && price && discount && description && category && image && address) {
             axios
                 .post('https://backend-self-delta.vercel.app/api/create-food', {
@@ -93,7 +85,7 @@ function Createpage() {
                 <div className='row borderr'>
                 <div className='col-md-12 mt-3'>
                     <input className="form-control" type="file" name="name" id="image"   onChange={handleImageUpload} />
-                    <label for="image">Select Image</label>
+                    <label for="image">Image URL</label>
                     </div>
                     <div className='col-md-6 mt-3'>
                     <input className="form-control" type="text" id="title" name="name" required onChange={(e)=>{setTitle(e.target.value)}} />
@@ -119,7 +111,7 @@ function Createpage() {
                     <input className="form-control"  type="text" id="address" name="name" required onChange={(e)=>{setAddress(e.target.value)}} />
                     <label className='form-label' for="address">Address</label>
                     </div>
-                  
+                   
                     <div className='col-md-12 mt-3'>
                     <button type="button" class="btn btn-warning" onClick={handleSubmit }>Submit Form</button>
                     </div>
