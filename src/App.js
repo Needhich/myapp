@@ -10,6 +10,7 @@ import Fooddetails from './Pages/Fooddetails';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import { useState } from 'react';
+import Logout from './Components/Logout';
 function App() {
  const [cart,setCart]= useState([])
 
@@ -17,12 +18,14 @@ function App() {
  const newcart =[...cart, food]
  setCart(newcart)
  }
-console.log(cart)
+
+
   return (
     <div className="App">
-     <Navbar cart={cart}/>
+     <Navbar cart={cart}  setCart={setCart}/>
      <Routes>
       <Route path='/' element= {<Home/>} />
+      <Route path="/logout" element={<Logout/>}/>
       <Route path='/menu' element= {<Menu  addtocart={addtocart}/>} />
       <Route path='*'  element={<Notfound/>} />
       <Route path='/createpage'  element={<Createpage/>} />

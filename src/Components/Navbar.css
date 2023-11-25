@@ -32,3 +32,12 @@
 .topsocialicons{
     margin: 0 10px;
 }
+.arrowbutton{
+    background-color: none;
+    border: none;
+}
+.cart-image{
+    width: 20px;
+    height: 50px;
+    border-radius: 50%;
+}

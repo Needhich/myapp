@@ -14,6 +14,8 @@ function Login(){
     })
     .then(res=>{
       if(res.data.status === 'true'){
+        const token = res.data.token
+       localStorage.setItem("userId",token)
         navigate("/menu")
       }
       else{
