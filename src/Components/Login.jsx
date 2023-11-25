@@ -15,7 +15,11 @@ function Login(){
     .then(res=>{
       if(res.data.status === 'true'){
         const token = res.data.token
+<<<<<<< Updated upstream
        localStorage.setItem("userId",token)
+=======
+        localStorage.setItem("userId", token)
+>>>>>>> Stashed changes
         navigate("/menu")
       }
       else{

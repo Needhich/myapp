@@ -47,17 +47,24 @@ return(
         </li>
       </ul>
       <ul className="navbar-nav ms-auto "> 
-                <li className="nav-item mx-2">
-                 <img className='topsocialicons' src={searchimg} alt="search"/>
+                <li className="nav-item mx-2"><img className='topsocialicons' src={searchimg} alt="search"/></li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img className='topsocialicons' src={loginimg} alt="user"/> Login/Signup</a>
+                <ul class="dropdown-menu">
+                  <li><Link className='dropdown-item' to="/login">Login</Link></li>
+                  <li><Link className='dropdown-item' to="/logout">Logout</Link></li>
+                </ul>
                 </li>
-                <li className="nav-item mx-2">
-                    <img className='topsocialicons' src={loginimg} alt="user"/>
-                </li>
+<<<<<<< Updated upstream
                 <li className="nav-item position-relative mx-2"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+=======
+                <li className="nav-item position-relative mx-2">
+                  <Link to="/cart">
+>>>>>>> Stashed changes
                     <img className='topsocialicons' src={cartimg} alt="cart"/>
                     <div className="badge-container">
                         <span className="badge">{props.cart.length}</span>
                     </div>
+                    </Link>
                 </li>
             </ul>
 

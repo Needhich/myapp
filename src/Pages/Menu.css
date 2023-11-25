@@ -84,14 +84,14 @@ body{
     height: 110px;
     text-align: center;
 }
-.foodimage img{
+.foodimage > img{
     transition: transform .2s;
     width: 80%;
     min-width: 80%;
     max-width: 80%;
     height: 90%;
 }
-.foodimage img:hover{
+.foodimage > img:hover{
     transform: scale(1.1);
 }
 .foodcardimg img{

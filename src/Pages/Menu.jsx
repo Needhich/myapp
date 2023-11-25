@@ -83,7 +83,13 @@ return(
 
                           <div className="menuoptioncard">
                 <div className="foodimg">
+<<<<<<< Updated upstream
                     <img style={{width:"100px"}} src={food.url} alt="foodtest" />
+=======
+                    <div className='foodimage'>
+                    <img src={food.url} alt="foodtest" />
+                    </div>
+>>>>>>> Stashed changes
                     <div className='foodcardimg'>
                     <img src={cart} onClick={()=>{props.addtocart(food)}} alt='cart' />
                     </div>
