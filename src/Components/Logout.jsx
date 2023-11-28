@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
@@ -12,14 +11,6 @@ function Logout(){
  
     return(
         <>
-=======
-
-
-function Logout(){
-    return(
-        <>
-        logout page
->>>>>>> Stashed changes
         </>
     )
 }

@@ -7,21 +7,6 @@ import { Link } from 'react-router-dom';
 import cartman from '../Assets/cartman.png';
 
 function Navbar(props){
-
-
-  const deleteOne =(index)=>{
-   const updatecart =[...props.cart]
-   updatecart.splice(index,1)
-   props.setCart(updatecart)
-  }
-
-
-  const addquantity=(index)=>{
-const updatecart =[...props.cart]
-updatecart[index].quantity += 1
-props.setCart(updatecart)
-  }
-
 return(
 <div className='header'>
 
@@ -54,12 +39,8 @@ return(
                   <li><Link className='dropdown-item' to="/logout">Logout</Link></li>
                 </ul>
                 </li>
-<<<<<<< Updated upstream
-                <li className="nav-item position-relative mx-2"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-=======
                 <li className="nav-item position-relative mx-2">
-                  <Link to="/cart">
->>>>>>> Stashed changes
+                  <Link to='/cart'>
                     <img className='topsocialicons' src={cartimg} alt="cart"/>
                     <div className="badge-container">
                         <span className="badge">{props.cart.length}</span>
@@ -69,7 +50,7 @@ return(
             </ul>
 
     </div>
-  </div>
+ </div>
 </nav>
 <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div className="offcanvas-header">
@@ -88,34 +69,6 @@ return(
   </div>
 </div>
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-    <h5 id="offcanvasRightLabel">MY CART</h5>
-    <button type="button" className=" arrowbutton text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-arrow-left"></i></button>
-  </div>
-  <div class="offcanvas-body">
-  {
-    props.cart.map((item,index)=>{
-      return(
-        <>
-      <div key={item._id} className='d-flex justify-content-between align-items-center border-bottom mb-2'>
-      <img  src={item.url} alt={item.title} style={{width:"50px", height:"50px"}}/>
-      <span className='p-2'>{item.title}</span>
-      <button className='btn btn-danger rounded'onClick={()=>{deleteOne(index)}}><i class="fa-solid fa-trash" style={{color: "#ffffff"}}></i></button>
-      <div className='d-flex justify-content-between align-items-center'>
-         <button className='btn'><i class="fa-solid fa-plus" onClick={()=>{addquantity(index)}}></i></button>{item.quantity}
-        <button className='btn'><i class="fa-solid fa-minus"></i></button>
-      </div>
-       
-
-      </div>
-        
-        </>
-      )
-    })
-  }
-  </div>
-</div>
 
 
 </div>

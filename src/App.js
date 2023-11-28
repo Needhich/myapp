@@ -12,25 +12,31 @@ import Signup from './Components/Signup';
 import Logout from './Components/Logout';
 import Cart from './Components/Cart';
 import { useState } from 'react';
-import Logout from './Components/Logout';
 function App() {
  const [cart,setCart]= useState([])
+ const [totalQuantity, setTotalQuantity] = useState(0);
 
  const addtocart =(food)=>{
- const newcart =[...cart, food]
- setCart(newcart)
- }
-<<<<<<< Updated upstream
+const existfoodindex = cart.findIndex((item)=>item._id === food._id)
+if(existfoodindex != -1){
+  const updatecart = [...cart]
+ const quantity = updatecart[existfoodindex].quantity += 1
+  setCart(updatecart)
+ const quantities = quantity + totalQuantity
+ setTotalQuantity(quantities)
+}else{
+  const newcart =[...cart,food]
+  setCart(newcart)
+  const quantities = 1 + totalQuantity
+  setTotalQuantity(quantities)
+}
+
+};
 
 
   return (
     <div className="App">
      <Navbar cart={cart}  setCart={setCart}/>
-=======
-  return (
-    <div className="App">
-     <Navbar cart={cart} setCart={setCart}/>
->>>>>>> Stashed changes
      <Routes>
       <Route path='/' element= {<Home/>} />
       <Route path="/logout" element={<Logout/>}/>
