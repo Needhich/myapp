@@ -1,13 +1,11 @@
 import './Home.css';
 import bikedelivery from '../Assets/bikedelivery.png';
-import strawberry from '../Assets/strawberry.png';
 import Menu from './Menu';
-import foodtest from '../Assets/foodtest.png';
 import cart from '../Assets/cart.png';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function Home(){
+function Home(props){
 
     const [items, setItems]=useState([])
 
@@ -251,7 +249,7 @@ useEffect(()=>{
   </div>
 </section>
 
-        <Menu/>
+        <Menu addtocart={props.addtocart}/>
     </div>
 )
 }

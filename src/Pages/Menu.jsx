@@ -15,6 +15,14 @@ import { Link } from 'react-router-dom';
 
 
 function Menu (props){
+    const [loading, setLoading]= useState(true);
+    const spinner = document.getElementById("spinner");
+    if(spinner){
+        setTimeout(() => {
+            spinner.style.display = "none";
+            setLoading(false);
+        }, 500);
+    }
     const [foods, setFoods]=useState([])
     const fetchitems=()=>{
         axios.get("https://backend-self-delta.vercel.app/api/food")
@@ -73,17 +81,20 @@ return(
 
             </div>
         </div>
+        <div id='spinner' class="spinner-border text-danger mx-auto" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
         <div className="menuoptions">
-
-        
             {
+                 !loading &&(
                 foods.map((food)=>{
                     return(
                         <>
-
                           <div className="menuoptioncard">
                 <div className="foodimg">
+                    <div className='foodimage'>
                     <img style={{width:"100px"}} src={food.url} alt="foodtest" />
+                    </div>
                     <div className='foodcardimg'>
                     <img src={cart} onClick={()=>{props.addtocart(food)}} alt='cart' />
                     </div>
@@ -101,6 +112,7 @@ return(
                         </>
                     )
                 })
+                 )
             }
           
            

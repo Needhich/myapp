@@ -13,7 +13,6 @@ function Fooddetails(props){
             setProductDetails(res.data.food)
         })
     },[])
-console.log(productDetails)
     return(
         <>
         <section className='container food-details'>
@@ -28,17 +27,21 @@ console.log(productDetails)
                 <p>
                     {productDetails.description}
                 </p>
-                <p className="text-danger">
+                <p className="text-danger">Real price:
                 ₵{productDetails.price}
                 </p>
-                <p className="text-warning">
+                <p className="text-warning">Discount:
                 ₵{productDetails.discount}
                 </p>
                 <div className='foodcartimg'>
                     <img src={cart} onClick={()=>{props.addtocart(productDetails)}} alt='cart' />
                     </div>
-                            </div>
+                    </div>
             </div>
+            <div className="coments">
+                    <label for="exampleFormControlTextarea1" class="form-label">Add your comments here</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
         </section>
         </>
     )
